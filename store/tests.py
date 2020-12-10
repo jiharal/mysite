@@ -5,6 +5,8 @@ import uuid
 from django.utils import timezone
 from django.test import TestCase, Client
 from django.urls import reverse, resolve
+from rest_framework import status
+from rest_framework.test import APITestCase
 
 from .models import Store
 # Create your tests here.
@@ -38,12 +40,9 @@ class StoreTestCase(TestCase):
         print(mdl.name)
 
 
-class StoreClientTest(TestCase):
-    def setUp(self):
-        self.client = Client()
-
+class StoreClientTest(APITestCase):
     def test_list(self):
-        store_list = reverse('store:list')
-        uri = resolve(store_list)
-        data = self.client.get(uri.route)
-        print(data)
+        url = reverse('store:all')
+        data = self.client.get(url)
+        print(data.json())
+        self.assertEqual(data.status_code, status.HTTP_200_OK)
