@@ -1,4 +1,5 @@
 {
-  "python.pythonPath": "/Users/zzz/.local/share/virtualenvs/mysite-hgvWdSlF",
-  "python.pipenvPath": "/Users/zzz/.local/share/virtualenvs/mysite-hgvWdSlF",
+  "python.pythonPath": "/Users/administrator/.local/share/virtualenvs/mysite-vITvF9c0",
+  "python.pipenvPath": "/Users/administrator/.local/share/virtualenvs/mysite-vITvF9c0",
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"]
 }

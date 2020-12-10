@@ -9,6 +9,7 @@ django = "*"
 autopep8 = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
+pylint-django = "*"
 
 [dev-packages]
 
