@@ -1,12 +1,8 @@
-from django.urls import include, path
-from rest_framework import routers
+from django.urls import path
+from . import views
 
-from .views import StoreVieSet
-
-router = routers.DefaultRouter()
-router.register(r'store', StoreVieSet)
-
+app_name = 'store'
 urlpatterns = [
-  path('', include(router.urls)),
-  path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+  path('', views.StoreAPI.get_all, name='all'),
+  path('detail/<id>', views.StoreAPI.get_detail, name='detail')
 ]
