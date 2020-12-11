@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
     'address.apps.AddressConfig',
+    'comments.apps.CommentsConfig',
+
     'rest_framework'
 ]
 
@@ -84,6 +86,23 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'TEST': {
+            'DEPENDENCIES': [],
+        },
+    },
+    'mongo': {
+        'ENGINE': 'djongo',
+        'NAME': 'shop_kancio_col',
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+            'username': '',
+            'password': '',
+            'authSource': 'admin'
+        },
+        'TEST': {
+            'DEPENDENCIES': [],
+        },
     }
 }
 
