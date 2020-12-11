@@ -17,6 +17,7 @@ StoreTestCase is used to test
 
 
 class StoreTestCase(TestCase):
+    databases = {'postgres', 'mongo'}
     def setUp(self):
         Store.objects.create(
             owner_id=uuid.uuid4(),
@@ -41,6 +42,7 @@ class StoreTestCase(TestCase):
 
 
 class StoreClientTest(APITestCase):
+    databases = {'default'}
     def test_list(self):
         url = reverse('store:all')
         data = self.client.get(url)
