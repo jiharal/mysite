@@ -1,3 +1,5 @@
+install:
+	@pipenv install -r requirements.txt
 update-req:
 	@pipenv run pip3 freeze > requirements.txt
 start:
@@ -7,3 +9,7 @@ test:
 migrate:
 	@python3 manage.py makemigrations 
 	@python3 manage.py migrate
+new-app:
+	@python3 manage.py startapp ${arg}
+shell:
+	@pipenv shell

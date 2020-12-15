@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'address.apps.AddressConfig',
     'comments.apps.CommentsConfig',
+    'person.apps.PersonConfig',
+    'blog.apps.BlogConfig',
 
     'rest_framework'
 ]
@@ -81,7 +83,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shop_kancio_db',
+        'NAME': 'mysite_db',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
