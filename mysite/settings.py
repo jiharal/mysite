@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'polls.apps.PollsConfig',
     'store.apps.StoreConfig',
     'address.apps.AddressConfig',
     'comments.apps.CommentsConfig',
     'person.apps.PersonConfig',
     'blog.apps.BlogConfig',
 
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'TEST': {
+            'NAME': 'mysite_db',
             'DEPENDENCIES': [],
         },
     },
