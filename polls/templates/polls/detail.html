@@ -1,0 +1,20 @@
+{% comment %} Title {% endcomment %}
+<h1>{{question.question_text}}</h1>
+
+{% comment %} Error handling {% endcomment %} {% if error_message %}
+<p>
+  <strong> {{error_message}} </strong>
+</p>
+{% endif %} {% comment %} Question Choice {% endcomment %}
+<form method="post" action="{% url 'polls:vote' question.id %}">
+  {% csrf_token %} {% for choice in question.choice_set.all %}
+  <input
+    type="radio"
+    name="choice"
+    id="choice{{forloop.counter}}"
+    value={{choice.id}}
+  />
+  <label for="choice{{ forloop.counter}}"> {{choice.choice_text}} </label>
+  {% endfor %}
+  <input type="submit" value="Vote" />
+</form>
