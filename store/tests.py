@@ -17,7 +17,7 @@ StoreTestCase is used to test
 
 
 class StoreTestCase(TestCase):
-    databases = {'postgres', 'mongo'}
+    databases = {'default', 'mongo'}
     def setUp(self):
         Store.objects.create(
             owner_id=uuid.uuid4(),
